@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Batiment;
-use App\Http\Requests\StoreBatimentRequest;
-use App\Http\Requests\UpdateBatimentRequest;
+use App\Models\Eleve;
+use App\Http\Requests\StoreEleveRequest;
+use App\Http\Requests\UpdateEleveRequest;
 
-class BatimentController extends Controller
+class EleveController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $batiments=Batiment::all();
-        return view('batiments.index',compact('batiments'));
+        $eleves=Eleve::all();
+        return view('eleves.index',compact('eleves'));
     }
 
     /**
@@ -28,7 +28,7 @@ class BatimentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBatimentRequest $request)
+    public function store(StoreEleveRequest $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class BatimentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Batiment $batiment)
+    public function show(Eleve $eleve)
     {
         //
     }
@@ -44,7 +44,7 @@ class BatimentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Batiment $batiment)
+    public function edit(Eleve $eleve)
     {
         //
     }
@@ -52,7 +52,7 @@ class BatimentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBatimentRequest $request, Batiment $batiment)
+    public function update(UpdateEleveRequest $request, Eleve $eleve)
     {
         //
     }
@@ -60,7 +60,7 @@ class BatimentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Batiment $batiment)
+    public function destroy(Eleve $eleve)
     {
         //
     }

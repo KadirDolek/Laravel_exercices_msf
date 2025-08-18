@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('batiments', function (Blueprint $table) {
+        Schema::create('eleves', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->tinyText('description');
+            $table->string('prenom');
+            $table->unsignedInteger('age');
+            $table->boolean('etat');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('batiments');
+        Schema::dropIfExists('eleves');
     }
 };

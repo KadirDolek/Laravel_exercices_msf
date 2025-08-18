@@ -2,20 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Batiment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-
-class BatimentSeeder extends Seeder
+class EleveSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Batiment::insert([
-            ['nom' => 'Hopital', 'description' => 'ici on soigne tavu']
-        ]);
+        //
     }
 }

@@ -2,20 +2,19 @@
 
 namespace Database\Seeders;
 
-use App\Models\Batiment;
+use App\Models\Typeformation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-
-class BatimentSeeder extends Seeder
+class TypeformationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Batiment::insert([
-            ['nom' => 'Hopital', 'description' => 'ici on soigne tavu']
+        Typeformation::insert([
+            ['nom' => 'Informatique']
         ]);
     }
 }
