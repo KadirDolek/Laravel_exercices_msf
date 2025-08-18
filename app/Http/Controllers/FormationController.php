@@ -13,7 +13,8 @@ class FormationController extends Controller
      */
     public function index()
     {
-        return view('formation.index');
+        $formation=Formation::all();
+        return view('formation.index', compact('formation'));
     }
 
     /**

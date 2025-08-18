@@ -14,7 +14,8 @@ class FormationSeeder extends Seeder
     public function run(): void
     {
         Formation::insert([
-            ['nom' => 'Developer','description' =>'Ca code dur']
+            ['nom' => 'Developer','description' =>'Ca code dur'],
+            ['nom' => 'DevOps','description' =>'Ca bash dur']
         ]);
     }
 }

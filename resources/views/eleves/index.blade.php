@@ -10,26 +10,26 @@
 </head>
 
 <body class="bg-gradient-to-l from-blue-400 to-gray-200 ">
-    <nav class="flex justify-center gap-x-6 font-bold text-blue-900 bg-gradient-to-r from-gray-200 to-gray-300 p-5">
-        <a href="/batiment">Notre batiment</a>
-        <a href="/eleves">Nos élèves</a>
-        <a href="/formation">Formations</a>
-        <a href="/typeformation">Types de formation</a>
+    <nav class="flex justify-center gap-x-6 font-bold text-blue-900 bg-gradient-to-r from-gray-300 to-gray-400 p-5 shadow-lg">
+        <a href="/batiment" class="hover:text-blue-700 hover:scale-105 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white/30">Notre bâtiment</a>
+        <a href="/eleves" class="hover:text-blue-700 hover:scale-105 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white/30">Nos élèves</a>
+        <a href="/formation" class="hover:text-blue-700 hover:scale-105 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white/30">Formations</a>
+        <a href="/typeformation" class="hover:text-blue-700 hover:scale-105 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-white/30">Types de formation</a>
     </nav>
     <div class="container mx-auto mt-8">
         <div class="flex">
             <h2
                 class="text-2xl font-bold mb-4 bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">
                 Liste des élèves</h2>
-            <!-- Bouton pour ouvrir le modal -->
+            <!-- MODAL BOUTON -->
             <button onclick="document.getElementById('modal').classList.remove('hidden')"
                 class="text-2xl font-bold mb-4 flex ml-auto cursor-pointer rounded-2xl border px-4 bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">
                 + Ajouter
             </button>
         </div>
 
-        <!-- Modal Tailwind -->
-        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <!-- DBUT MODAL-->
+        <div id="modal" class="fixed inset-0 bg-gradient-to-l from-blue-400 to-gray-200 bg-opacity-80 flex items-center justify-center z-50 hidden">
             <div class="bg-white rounded-lg shadow-lg w-full max-w-md">
                 <div class="flex justify-between items-center border-b px-4 py-2">
                     <h5 class="text-lg font-bold">Ajout d'un élève</h5>
