@@ -13,7 +13,7 @@ class TypeformationController extends Controller
      */
     public function index()
     {
-        //
+        return view('typeformation.index');
     }
 
     /**
