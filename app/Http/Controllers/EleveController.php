@@ -13,8 +13,8 @@ class EleveController extends Controller
      */
     public function index()
     {
-        $eleves=Eleve::all();
-        return view('eleves.index',compact('eleves'));
+        $eleves = Eleve::all();
+        return view('eleves.index', compact('eleves'));
     }
 
     /**
@@ -22,7 +22,7 @@ class EleveController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -30,7 +30,14 @@ class EleveController extends Controller
      */
     public function store(StoreEleveRequest $request)
     {
-        //
+        $eleve = new Eleve();
+        $eleve->nom = $request->nom;
+        $eleve->prenom = $request->prenom;
+        $eleve->age = $request->age;
+        $eleve->etat = $request->etat;
+        $eleve->save();
+
+        return redirect()->route('ajoutEleve')->with('success', 'Élève ajouté avec succès');
     }
 
     /**

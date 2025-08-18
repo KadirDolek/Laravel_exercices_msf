@@ -13,7 +13,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/batiment',[BatimentController::class,'index']);
-Route::get('/eleves',[EleveController::class,'index']);
-Route::get('/formation',[FormationController::class,'index']);
-Route::get('/typeformation',[TypeformationController::class,'index']);
+Route::get('/batiment', [BatimentController::class, 'index']);
+
+
+Route::get('/eleves', [EleveController::class, 'index'])->name('ajoutEleve');
+Route::post('/eleves', [EleveController::class, 'store'])->name('eleves.store');
+
+
+Route::get('/formation', [FormationController::class, 'index']);
+
+
+Route::get('/typeformation', [TypeformationController::class, 'index']);
+
+
