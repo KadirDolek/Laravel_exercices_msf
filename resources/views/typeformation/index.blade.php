@@ -18,7 +18,6 @@
         <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">
             Le type de formation disponibles:
         </h2>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($typeformation as $zzz)
                 <div class="group bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50 hover:border-red-200">
@@ -56,6 +55,6 @@
             </div>
         </div>
         
-    </div>
+        </div>
 </body>
 </html>

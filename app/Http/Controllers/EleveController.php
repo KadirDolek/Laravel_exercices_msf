@@ -37,7 +37,7 @@ class EleveController extends Controller
         $eleve->etat = $request->etat;
         $eleve->save();
 
-        return redirect()->route('ajoutEleve')->with('success', 'Élève ajouté avec succès');
+        return redirect()->route('ajoutEleve')->with('success');
     }
 
     /**
@@ -45,7 +45,7 @@ class EleveController extends Controller
      */
     public function show(Eleve $eleve)
     {
-        //
+        return view('show', compact('eleve'));
     }
 
     /**
@@ -53,22 +53,29 @@ class EleveController extends Controller
      */
     public function edit(Eleve $eleve)
     {
-        //
+        return view('edit', compact('eleve'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEleveRequest $request, Eleve $eleve)
+    public function update($id, UpdateEleveRequest $request, )
     {
-        //
+        Eleve::where("id", $id)->update([
+            "nom"=>$request->nom,
+            "prenom"=>$request->prenom,
+            "age"=>$request->age,
+            "etat"=>$request->etat
+        ]);
+        return redirect()->route('ajoutEleve');
     }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Eleve $eleve)
-    {
-        //
+    {   
+        $eleve->delete();
+        return redirect()->route('ajoutEleve');
     }
 }

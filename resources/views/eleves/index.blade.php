@@ -20,9 +20,11 @@
         <div class="flex">
             <h2
                 class="text-2xl font-bold mb-4 bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">
-                Liste des élèves</h2>
+                Liste des élèves
+            </h2>
             <!-- MODAL BOUTON -->
-            <button onclick="document.getElementById('modal').classList.remove('hidden')"
+            <button 
+                onclick="document.getElementById('modal').classList.remove('hidden')"
                 class="text-2xl font-bold mb-4 flex ml-auto cursor-pointer rounded-2xl border px-4 bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">
                 + Ajouter
             </button>
@@ -70,23 +72,33 @@
         </div>
         {{-- FIN MODAL --}}
 
-        <table class="min-w-full bg-white rounded shadow-2xl">
+        <table class="min-w-full bg-gray-200 rounded shadow-2xl">
             <thead>
                 <tr>
-                    <th class="py-2 px-4 border-b">Nom</th>
-                    <th class="py-2 px-4 border-b">Prénom</th>
-                    <th class="py-2 px-4 border-b">Âge</th>
-                    <th class="py-2 px-4 border-b">État</th>
+                    <th class="py-2 px-4 border-b bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">Nom</th>
+                    <th class="py-2 px-4 border-b bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">Prénom</th>
+                    <th class="py-2 px-4 border-b bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">Âge</th>
+                    <th class="py-2 px-4 border-b bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">État</th>
+                    <th class="py-2 px-4 border-b bg-gradient-to-r from-red-500 to-purple-600 bg-clip-text text-transparent">Edit/Delete</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($eleves as $ppl)
                     <tr class="text-center bg-gradient-to-r from-gray-100 to-gray-200">
-                        <td class="py-2 px-4 border-b border-r">{{ $ppl->nom }}</td>
-                        <td class="py-2 px-4 border-b border-r">{{ $ppl->prenom }}</td>
-                        <td class="py-2 px-4 border-b border-r">{{ $ppl->age }} ans</td>
-                        <td class="py-2 px-4 border-b border-r">
+                        <td class="py-2 px-4 border-b border-r font-bold">{{ $ppl->nom }}</td>
+                        <td class="py-2 px-4 border-b border-r font-bold">{{ $ppl->prenom }}</td>
+                        <td class="py-2 px-4 border-b border-r font-bold">{{ $ppl->age }} ans</td>
+                        <td class="py-2 px-4 border-b border-r font-bold">
                             {{ $ppl->etat ? 'en ligne' : 'hors ligne' }}
+                        </td>
+                        <td class="py-2 px-4 border-b border-r font-bold flex flex-row justify-evenly">
+                            <form action="{{ route('remove_eleves', $ppl->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE') 
+                            <input class="bg-gradient-to-r from-red-700 to-black bg-clip-text text-transparent cursor-pointer" type="submit" value="Supprimer">
+                            </form>
+                            <button><a class="bg-gradient-to-r from-black to-green-600 bg-clip-text text-transparent font-bold" href="{{ route('showEleve', $ppl->id) }}">Voir</a></button>
+                            <button><a class="bg-gradient-to-r from-yellow-400 to-black bg-clip-text text-transparent font-bold" href="{{ route('editEleve', $ppl->id) }}">Edit</a></button>
                         </td>
                     </tr>
                 @endforeach
